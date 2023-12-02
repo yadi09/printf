@@ -9,14 +9,20 @@
 int _puts(va_list args)
 {
 char *str = va_arg(args, char*);
+int length;
 
 char *new_str = malloc(strlen(str) + 1);
 if (new_str == NULL)
+{
+	write(1, "Fail puts!!!", 12);
 	return (-1);
+}
 
 strcpy(new_str, str);
-write(1, new_str, strlen(new_str));
+length = strlen(new_str);
+
+write(1, new_str, length);
 free(new_str);
 
-return (strlen(str));
+return (length);
 }

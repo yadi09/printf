@@ -13,13 +13,16 @@ int i = 0, length = 0;
 int (*desire_func)(va_list);
 
 if (format == NULL)
+{
+	write(1, "Fail format!!!", 14);
 	return (-1);
+}
 
 va_start(args, format);
 
 while (format[i])
 {
-	if (format[i] != '%')
+if (format[i] != '%')
 {
 	write(1, &format[i], 1);
 	length++;
@@ -36,7 +39,10 @@ else
 {
 	desire_func = check_specifier(&format[i]);
 if (desire_func == NULL)
+{
+	write(1, "Fail desire_func!!!", 19);
 	return (-1);
+}
 
 length += desire_func(args);
 }

@@ -10,12 +10,19 @@ int (*check_specifier(const char *s))(va_list)
 {
 	check specifier[] = {
 		{'c', _putchar},
-		{'s', _puts}
+		{'s', _puts},
+		{'d', print_integer},
+		{'i', print_integer},
+		{'b', to_binary},
+		{'u', print_unsigned},
+		{'o', to_octal},
+		{'x', to_lower_hexa},
+		{'X', to_upper_hexa}
 	};
 
 int i = 0;
 
-while (i < 2)
+while (i < 9)
 {
 	if (specifier[i].c == *s)
 		return (specifier[i].func_ptr);

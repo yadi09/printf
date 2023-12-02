@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#define BUFFER_SIZE 1024
+
 /**
  * struct specifiers - struct type
  * @c: format specifier
@@ -20,5 +22,13 @@ int _printf(const char *format, ...);
 int (*check_specifier(const char *s))(va_list);
 int _putchar(va_list args);
 int _puts(va_list args);
+void str_rev(char *str);
+int print_integer(va_list args);
+int print_buffer(char *buffer);
+int to_binary(va_list args);
+int print_unsigned(va_list args);
+int to_octal(va_list args);
+int to_lower_hexa(va_list args);
+int to_upper_hexa(va_list args);
 
 #endif
