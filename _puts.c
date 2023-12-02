@@ -8,21 +8,18 @@
 
 int _puts(va_list args)
 {
-char *str = va_arg(args, char*);
-int length;
+    char *str = va_arg(args, char*);
+    int length;
 
-char *new_str = malloc(strlen(str) + 1);
-if (new_str == NULL)
-{
-	write(1, "Fail puts!!!", 12);
-	return (-1);
-}
+    char *new_str = malloc(strlen(str) + 1);
+    if (new_str == NULL)
+    return (-1);
+    
+    strcpy(new_str, str);
+    length = strlen(new_str);
 
-strcpy(new_str, str);
-length = strlen(new_str);
+    write(1, new_str, length);
+    free(new_str);
 
-write(1, new_str, length);
-free(new_str);
-
-return (length);
+    return (length);
 }

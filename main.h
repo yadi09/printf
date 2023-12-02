@@ -14,9 +14,10 @@
 */
 typedef struct specifiers
 {
-	char c;
-	int (*func_ptr)(va_list);
+    char c;
+    int (*func_ptr)(va_list);
 } check;
+
 
 int _printf(const char *format, ...);
 int (*check_specifier(const char *s))(va_list);
