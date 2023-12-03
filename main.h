@@ -33,5 +33,7 @@ int to_lower_hexa(va_list args);
 int to_upper_hexa(va_list args);
 int print_String(va_list args);
 int print_address(va_list args);
+int revstr(va_list args);
+int rot13(va_list args);
 
 #endif
