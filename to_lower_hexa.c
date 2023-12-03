@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
- * 
+ * to_lower_hexa - function that convert to hexa in lower
+ * @args: arguments
+ * Return: length
 */
 
 int to_lower_hexa(va_list args)

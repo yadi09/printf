@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
- * 
+ * str_rev - function that reverse the string
+ * @str: string
+ * Return: void
 */
 
 void str_rev(char *str)

@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
- * 
+ * to_octal - function that convert to octal
+ * @args: arguments
+ * Return: length
 */
 
 int to_octal(va_list args)

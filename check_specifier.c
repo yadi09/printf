@@ -17,12 +17,14 @@ int (*check_specifier(const char *s))(va_list)
         {'u', print_unsigned},
         {'o', to_octal},
         {'x', to_lower_hexa},
-        {'X', to_upper_hexa}
+        {'X', to_upper_hexa},
+        {'S', print_String},
+        {'p', print_address}
     };
 
     int i = 0;
 
-    while (i < 9)
+    while (i < 11)
     {
         if (specifier[i].c == *s)
         return (specifier[i].func_ptr);

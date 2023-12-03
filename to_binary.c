@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
- * 
+ * to_binary - function that convert number to binary
+ * @args: arguments
+ * Return: length
 */
 
 int to_binary(va_list args)

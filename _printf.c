@@ -8,7 +8,6 @@
 
 int _printf(const char *format, ...)
 {
-    char *error = "Error";
     va_list args;
     int i = 0, length = 0;
     int (*desire_func)(va_list);
@@ -38,10 +37,9 @@ int _printf(const char *format, ...)
                 desire_func = check_specifier(&format[i]);
                 if (desire_func == NULL)
                 {
-                write(1, error, 5);
-                return (-1);
+                    _printf("%%%c", format[i]);
                 }
-
+                else
                 length += desire_func(args);
             }
         }
