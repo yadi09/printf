@@ -8,23 +8,43 @@
 
 int print_integer(va_list args)
 {
-    int length, i;
+    int length, i, back_up_num;
     char buffer[BUFFER_SIZE];
-    int num = va_arg(args, int);
+    int num = (int)va_arg(args, int);
 
-    if (num < 0)
+    back_up_num = num;
+    if (back_up_num < 0)
     {
-    num = -num;
-    _printf("%c", '-');
+        if (back_up_num == SHRT_MIN)
+        {
+            length = print_buffer(MIN_SHRT_STR);
+            return (length);
+        }
+        else if (back_up_num == INT_MIN)
+        {
+            length = print_buffer(MIN_INT_STR);
+            return(length);
+        }
+        else if (back_up_num == LONG_MIN)
+        {
+            length = print_buffer(MIN_LONG_STR);
+            return(length);
+        }
+    back_up_num = -back_up_num;
     }
+    
     i = 0;
-    while (num > 0)
+    while (back_up_num/10)
     {
-        buffer[i] = (num % 10) + '0';
-        num /= 10;
+        buffer[i] = (back_up_num % 10) + '0';
+        back_up_num /= 10;
         i++;
     }
-    buffer[i]= '\0';
+    buffer[i] = back_up_num + '0';
+    if (num < 0)
+    buffer[++i] = '-';
+
+    buffer[++i]= '\0';
     str_rev(buffer);
 
     length = print_buffer(buffer);
