@@ -10,7 +10,7 @@ int print_integer(va_list args)
 {
     int length, i, back_up_num;
     char buffer[BUFFER_SIZE];
-    int num = (int)va_arg(args, int);
+    int num = va_arg(args, int);
 
     back_up_num = num;
     if (back_up_num < 0)
@@ -23,11 +23,6 @@ int print_integer(va_list args)
         else if (back_up_num == INT_MIN)
         {
             length = print_buffer(MIN_INT_STR);
-            return(length);
-        }
-        else if (back_up_num == LONG_MIN)
-        {
-            length = print_buffer(MIN_LONG_STR);
             return(length);
         }
     back_up_num = -back_up_num;

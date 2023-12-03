@@ -5,8 +5,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <limits.h>
 
 #define BUFFER_SIZE 1024
+#define MIN_SHRT_STR "-32768"
+#define MIN_INT_STR "-2147483648"
+#define MIN_LONG_STR "-9223372036854775808"
 
 /**
  * struct specifiers - struct type
