@@ -14,6 +14,11 @@ int to_lower_hexa(va_list args)
     char buffer[1024];
     int i = 0, length;
 
+    if (back_up_num == 0)
+	{
+	_printf("0");
+	return (1);
+	}
     while (back_up_num > 0)
     {
         buffer[i] = hexa_range[(back_up_num % 16)];
