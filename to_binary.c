@@ -23,7 +23,7 @@ int to_binary(va_list args)
         back_up_num /= 2;
         i++;
     }
-    buffer[++i] = '\0';
+    buffer[i] = '\0';
     str_rev(buffer);
 
     length = print_buffer(buffer);
