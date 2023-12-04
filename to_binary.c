@@ -12,6 +12,12 @@ int to_binary(va_list args)
     char buffer[BUFFER_SIZE];
     int i = 0, length;
 
+    if (back_up_num == 0)
+	{
+		_printf("0");
+		return (1);
+	}
+
     while (back_up_num > 0)
     {
         buffer[i] = (back_up_num % 2) + '0';
