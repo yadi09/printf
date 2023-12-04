@@ -17,7 +17,6 @@ int to_binary(va_list args)
 		_printf("0");
 		return (1);
 	}
-
     while (back_up_num > 0)
     {
         buffer[i] = (back_up_num % 2) + '0';
