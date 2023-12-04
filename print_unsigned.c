@@ -12,6 +12,12 @@ int print_unsigned(va_list args)
     char buffer[BUFFER_SIZE];
     int i = 0, length;
 
+    if (num == 0)
+	{
+		_printf("0");
+		return (1);
+	}
+
     while (num > 0)
     {
         buffer[i] = (num % 10) + '0';
