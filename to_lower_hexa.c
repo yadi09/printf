@@ -8,7 +8,7 @@
 
 int to_lower_hexa(va_list args)
 {
-    unsigned int num = (unsigned int)va_arg(args, unsigned int);
+    unsigned int num = va_arg(args, unsigned int);
     unsigned int back_up_num = num;
     char hexa_range[] = "0123456789abcdef";
     char buffer[1024];
