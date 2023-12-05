@@ -43,8 +43,8 @@ int _printf(const char *format, ...)
             {
                 while (check_if_flag(format[i]))
                 i++;
-
-                desire_func = check_specifier(format[i]);
+                
+                desire_func = check_specifier(&format[i]);
                 if (desire_func == NULL)
                 {
                     _printf("%%%c", format[i]);

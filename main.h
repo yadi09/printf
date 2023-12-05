@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <limits.h>
 
+
 #define BUFFER_SIZE 1024
 #define MIN_SHRT_STR "-32768"
 #define MIN_INT_STR "-2147483648"
@@ -35,7 +36,7 @@ struct add_mod
 } add;
 
 int _printf(const char *format, ...);
-int (*check_specifier(const char s))(va_list);
+int (*check_specifier(const char *s))(va_list);
 int _putchar(va_list args);
 int _puts(va_list args);
 void str_rev(char *str);

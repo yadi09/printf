@@ -29,13 +29,6 @@ int to_upper_hexa(va_list args)
     str_rev(buffer);
 
     add.num -= (i);
-    while (add.num > 0)
-    {
-        write(1, " ", 1);
-        add.num--;
-    }
-    add.mult = 1;
-    add.num = 0;
     length = print_buffer(buffer);
 
     return (length);
