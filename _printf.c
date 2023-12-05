@@ -17,11 +17,12 @@ int _printf(const char *format, ...)
     add.plus = 0;
     add.space = 0;
 
+    if (format == NULL)
+    return (-1);
+
     va_start(args, format);
 
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
+    if (format[0] == '%' && !format[1])
 		return (-1);
 
     while (format[i])
