@@ -30,10 +30,12 @@ struct add_mod
     int hash;
     int length_modifier_long;
     int length_modifier_short;
+    int num;
+    int mult;
 } add;
 
 int _printf(const char *format, ...);
-int (*check_specifier(const char *s))(va_list);
+int (*check_specifier(const char s))(va_list);
 int _putchar(va_list args);
 int _puts(va_list args);
 void str_rev(char *str);

@@ -18,6 +18,14 @@ int _puts(va_list args)
     strcpy(new_str, str);
     length = strlen(new_str);
 
+    add.num -= (length);
+    while (add.num > 0)
+    {
+        write(1, " ", 1);
+        add.num--;
+    }
+    add.mult = 1;
+    add.num = 0;
     write(1, new_str, length);
     free(new_str);
 

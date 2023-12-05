@@ -14,11 +14,6 @@ int to_upper_hexa(va_list args)
     char buffer[BUFFER_SIZE];
     int i = 0, length;
 
-    if (back_up_num == 0)
-	{
-	_printf("0");
-	return (1);
-	}
     while (back_up_num > 0)
     {
         buffer[i] = HEXA_range[(back_up_num % 16)];
@@ -26,13 +21,21 @@ int to_upper_hexa(va_list args)
         i++;
     }
     if (add.hash)
-	{
-	buffer[i++] = 'X';
-	buffer[i++] = '0';
-	}
+    {
+        buffer[i++] = 'X';
+        buffer[i++] = '0';
+    }
     buffer[i] = '\0';
     str_rev(buffer);
 
+    add.num -= (i);
+    while (add.num > 0)
+    {
+        write(1, " ", 1);
+        add.num--;
+    }
+    add.mult = 1;
+    add.num = 0;
     length = print_buffer(buffer);
 
     return (length);

@@ -6,7 +6,7 @@
  * Return: function pointer
 */
 
-int (*check_specifier(const char *s))(va_list)
+int (*check_specifier(const char s))(va_list)
 {
     check specifier[] = {
         {'c', _putchar},
@@ -20,15 +20,15 @@ int (*check_specifier(const char *s))(va_list)
         {'X', to_upper_hexa},
         {'S', print_String},
         {'p', print_address},
-	{'r', revstr},
-	{'R', rot13}
+        {'r', revstr},
+        {'R', rot13}
     };
 
     int i = 0;
 
     while (i < 13)
     {
-        if (specifier[i].c == *s)
+        if (specifier[i].c == s)
         return (specifier[i].func_ptr);
 
         i++;

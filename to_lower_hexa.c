@@ -8,17 +8,12 @@
 
 int to_lower_hexa(va_list args)
 {
-    unsigned int num = va_arg(args, unsigned int);
+    unsigned int num = (unsigned int)va_arg(args, unsigned int);
     unsigned int back_up_num = num;
     char hexa_range[] = "0123456789abcdef";
     char buffer[1024];
     int i = 0, length;
 
-    if (back_up_num == 0)
-	{
-	_printf("0");
-	return (1);
-	}
     while (back_up_num > 0)
     {
         buffer[i] = hexa_range[(back_up_num % 16)];
@@ -26,13 +21,21 @@ int to_lower_hexa(va_list args)
         i++;
     }
     if (add.hash)
-	{
-	buffer[i++] = 'x';
-	buffer[i++] = '0';
-	}
+    {
+    buffer[i++] = 'x';
+    buffer[i++] = '0';
+    }
     buffer[i] = '\0';
     str_rev(buffer);
 
+    add.num -= (i);
+    while (add.num > 0)
+    {
+        write(1, " ", 1);
+        add.num--;
+    }
+    add.mult = 1;
+    add.num = 0;
     length = print_buffer(buffer);
 
     return (length);

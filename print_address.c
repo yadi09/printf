@@ -10,13 +10,13 @@ int print_address(va_list args)
 {
     void *ptr = va_arg(args, void*);
     uintptr_t back_up_num;
-    char HEXA_range[] = "0123456789abcdef";
+    char HEXA_range[] = "0123456789ABCDEF";
     char buffer[BUFFER_SIZE];
     int i = 0, length;
 
     if (ptr == NULL)
     return (print_buffer("(nil)"));
-
+    
     back_up_num = (uintptr_t)ptr;
     while (back_up_num > 0)
     {
@@ -29,6 +29,14 @@ int print_address(va_list args)
     buffer[++i] = '\0';
     str_rev(buffer);
 
+    add.num -= (i);
+    while (add.num > 0)
+    {
+        write(1, " ", 1);
+        add.num--;
+    }
+    add.mult = 1;
+    add.num = 0;
     length = print_buffer(buffer);
 
     return (length);
