@@ -14,14 +14,6 @@ int print_buffer(char *buffer)
     if (buffer == NULL)
     return (-1);
     
-    while (add.num > 0)
-    {
-        write(1, " ", 1);
-        add.num--;
-    }
-    add.mult = 1;
-    add.num = 0;
-
     length = strlen(buffer);
     while (total < length)
     {

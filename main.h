@@ -7,7 +7,6 @@
 #include <stdint.h>
 #include <limits.h>
 
-
 #define BUFFER_SIZE 1024
 #define MIN_SHRT_STR "-32768"
 #define MIN_INT_STR "-2147483648"
@@ -31,8 +30,6 @@ struct add_mod
     int hash;
     int length_modifier_long;
     int length_modifier_short;
-    int num;
-    int mult;
 } add;
 
 int _printf(const char *format, ...);

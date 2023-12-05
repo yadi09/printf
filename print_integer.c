@@ -59,8 +59,6 @@ int print_integer(va_list args)
 
     buffer[++i]= '\0';
     str_rev(buffer);
-
-    add.num -= (i);
     length = print_buffer(buffer);
 
     return(length);

@@ -35,13 +35,6 @@ int check_if_flag(char flag)
         add.length_modifier_short = 1;
         return_value = 1;
     }
-    else if (flag >= 48 && flag <= 57)
-    {
-        add.num *= add.mult;
-        add.num += (flag - '0');
-        add.mult *= 10;
-        return_value = 1;
-    }
 
 
 

@@ -16,8 +16,6 @@ int _printf(const char *format, ...)
     add.length_modifier_short = 'd';
     add.plus = 0;
     add.space = 0;
-    add.mult = 1;
-    add.num = 0;
 
     if (format == NULL)
     return (-1);
