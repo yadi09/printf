@@ -16,13 +16,12 @@ int _printf(const char *format, ...)
     add.length_modifier_short = 'd';
     add.plus = 0;
     add.space = 0;
-    
-    if (format == NULL)
-    return (-1);
 
     va_start(args, format);
 
-    if (format[0] == '%' && !format[1])
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 
     while (format[i])
