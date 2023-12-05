@@ -8,20 +8,29 @@
 
 int print_unsigned(va_list args)
 {
-    unsigned int num = (unsigned int)va_arg(args, unsigned int);
-    unsigned int back_up_num = num;
+     unsigned int num;
     char buffer[BUFFER_SIZE];
     int i = 0, length;
 
-    if (back_up_num == 0)
+    if (add.length_modifier_long)
+        num = va_arg(args, unsigned long);
+    else if (add.length_modifier_short)
+    {
+        num = (unsigned short)va_arg(args, unsigned int);
+    }
+    else
+        num = va_arg(args, unsigned int);
+
+    if (num == 0)
 	{
 		_printf("0");
 		return (1);
 	}
-    while (back_up_num > 0)
+
+    while (num > 0)
     {
-        buffer[i] = (back_up_num % 10) + '0';
-        back_up_num /= 10;
+        buffer[i] = (num % 10) + '0';
+        num /= 10;
         i++;
     }
 

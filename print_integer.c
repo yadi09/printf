@@ -51,10 +51,13 @@ int print_integer(va_list args)
     buffer[i] = back_up_num + '0';
     if (num < 0)
     buffer[++i] = '-';
+    else if (add.plus)
+    buffer[++i] = '+';
+    else if (add.space)
+    buffer[++i] = ' ';
 
     buffer[++i]= '\0';
     str_rev(buffer);
-
     length = print_buffer(buffer);
 
     return(length);

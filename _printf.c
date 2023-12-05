@@ -11,7 +11,12 @@ int _printf(const char *format, ...)
     va_list args;
     int i = 0, length = 0;
     int (*desire_func)(va_list);
-
+    add.hash = 0;
+    add.length_modifier_long = 'd';
+    add.length_modifier_short = 'd';
+    add.plus = 0;
+    add.space = 0;
+    
     if (format == NULL)
     return (-1);
 
@@ -37,6 +42,9 @@ int _printf(const char *format, ...)
             }
             else
             {
+                while (check_if_flag(format[i]))
+                i++;
+                
                 desire_func = check_specifier(&format[i]);
                 if (desire_func == NULL)
                 {

@@ -26,6 +26,11 @@ int to_upper_hexa(va_list args)
         back_up_num /= 16;
         i++;
     }
+    if (add.hash)
+    {
+        buffer[i++] = 'X';
+        buffer[i++] = '0';
+    }
     buffer[i] = '\0';
     str_rev(buffer);
 

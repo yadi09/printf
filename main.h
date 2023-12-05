@@ -49,5 +49,6 @@ int print_address(va_list args);
 int print_char(char c);
 int revstr(va_list args);
 int rot13(va_list args);
+int check_if_flag(char flag);
 
 #endif
