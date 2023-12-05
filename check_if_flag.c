@@ -25,6 +25,18 @@ int check_if_flag(char flag)
         add.space = 1;
         return_value = 1;
     }
+    else if (flag == 'l')
+    {
+        add.length_modifier_long = 1;
+        return_value = 1;
+    }
+    else if (flag == 'h')
+    {
+        add.length_modifier_short = 1;
+        return_value = 1;
+    }
+
+
 
     return (return_value);
 }

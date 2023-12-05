@@ -12,7 +12,8 @@ int _printf(const char *format, ...)
     int i = 0, length = 0;
     int (*desire_func)(va_list);
     add.hash = 0;
-    add.langth_modifier = 'd';
+    add.length_modifier_long = 'd';
+    add.length_modifier_short = 'd';
     add.plus = 0;
     add.space = 0;
 

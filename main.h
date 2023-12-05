@@ -28,7 +28,8 @@ struct add_mod
     int plus;
     int space;
     int hash;
-    char langth_modifier;
+    int length_modifier_long;
+    int length_modifier_short;
 } add;
 
 int _printf(const char *format, ...);

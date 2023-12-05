@@ -13,7 +13,7 @@ int main(void)
     int len2;
     unsigned int ui;
     void *addr;
-    
+
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
@@ -43,8 +43,11 @@ int main(void)
 
     _printf("%b\n", 98);
     _printf("%S\n", "Best\nSchool");
-    _printf("[%R]", "Yadamzer");
+    _printf("[%R]\n", "Yadamzer");
     _printf("pluse [%+d]\n", 30);
+    _printf("%hd\n", 1533464565);
+    printf("%hd", 1533464565);
+
 
     return (0);
 }

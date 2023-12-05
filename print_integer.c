@@ -8,10 +8,24 @@
 
 int print_integer(va_list args)
 {
-    int length, i, back_up_num;
+    int length, i, num, back_up_num;
     char buffer[BUFFER_SIZE];
-    int num = (int)va_arg(args, int);
 
+    if (add.length_modifier_long)
+    {
+        long int long_num = va_arg(args, long int);
+        num = (int)long_num;
+    }
+    else if (add.length_modifier_short)
+    {
+        short int short_num = (short int)va_arg(args, int);
+        num = (int)short_num;
+    }
+    else
+    {
+        num = va_arg(args, int);
+    }
+    
     back_up_num = num;
     if (back_up_num < 0)
     {
