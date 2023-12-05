@@ -8,9 +8,18 @@
 
 int print_unsigned(va_list args)
 {
-    unsigned int num = va_arg(args, unsigned int);
+    unsigned int num;
     char buffer[BUFFER_SIZE];
     int i = 0, length;
+
+    if (add.length_modifier_long)
+        num = va_arg(args, unsigned long);
+    else if (add.length_modifier_short)
+    {
+        num = (unsigned short)va_arg(args, unsigned int);
+    }
+    else
+        num = va_arg(args, unsigned int);
 
     if (num == 0)
 	{
