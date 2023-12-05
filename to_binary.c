@@ -14,17 +14,16 @@ int to_binary(va_list args)
 
     if (back_up_num == 0)
 	{
-		write(1, "0", 1);
+		print_char('0');
 		return (1);
 	}
-
     while (back_up_num > 0)
     {
         buffer[i] = (back_up_num % 2) + '0';
         back_up_num /= 2;
         i++;
     }
-    buffer[++i] = '\0';
+    buffer[i] = '\0';
     str_rev(buffer);
 
     length = print_buffer(buffer);

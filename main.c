@@ -20,14 +20,14 @@ int main(void)
     addr = (void *)(uintptr_t)0x637541f0;
     _printf("Length:[%d, %i]\n", len2, len2);
     printf("Length:[%d, %i]\n", len2, len2);
-    _printf("Negative:[%+d]\n", -762534);
-    printf("Negative:[%+d]\n", -762534);
-    _printf("Unsigned:[%hu]\n", ui);
-    printf("Unsigned:[%hu]\n", ui);
-    _printf("Unsigned octal:[%#o]\n", ui);
-    printf("Unsigned octal:[%#o]\n", ui);
-    _printf("Unsigned hexadecimal:[%#x, %#X]\n", ui, ui);
-    printf("Unsigned hexadecimal:[%#x, %#X]\n", ui, ui);
+    _printf("Negative:[%d]\n", -762534);
+    printf("Negative:[%d]\n", -762534);
+    _printf("Unsigned:[%u]\n", ui);
+    printf("Unsigned:[%u]\n", ui);
+    _printf("Unsigned octal:[%o]\n", ui);
+    printf("Unsigned octal:[%o]\n", ui);
+    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
@@ -44,10 +44,6 @@ int main(void)
     _printf("%b\n", 98);
     _printf("%S\n", "Best\nSchool");
     _printf("[%R]\n", "Yadamzer");
-    _printf("pluse [%+d]\n", 30);
-    _printf("%hd\n", 1533464565);
-    printf("%hd", 1533464565);
-
 
     return (0);
 }
