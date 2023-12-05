@@ -10,7 +10,7 @@ int print_integer(va_list args)
 {
     int length, i, back_up_num;
     char buffer[BUFFER_SIZE];
-    int num = va_arg(args, int);
+    int num = (int)va_arg(args, int);
 
     back_up_num = num;
     if (back_up_num < 0)
@@ -38,10 +38,13 @@ int print_integer(va_list args)
     buffer[i] = back_up_num + '0';
     if (num < 0)
     buffer[++i] = '-';
+    else if (add.plus)
+    buffer[++i] = '+';
+    else if (add.space)
+    buffer[++i] = ' ';
 
     buffer[++i]= '\0';
     str_rev(buffer);
-
     length = print_buffer(buffer);
 
     return(length);

@@ -23,6 +23,14 @@ typedef struct specifiers
     int (*func_ptr)(va_list);
 } check;
 
+struct add_mod
+{
+    int plus;
+    int space;
+    int hash;
+    char langth_modifier;
+} add;
+
 int _printf(const char *format, ...);
 int (*check_specifier(const char *s))(va_list);
 int _putchar(va_list args);
@@ -39,5 +47,6 @@ int print_String(va_list args);
 int print_address(va_list args);
 int revstr(va_list args);
 int rot13(va_list args);
+int check_if_flag(char flag);
 
 #endif
